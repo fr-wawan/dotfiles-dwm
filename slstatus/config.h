@@ -66,9 +66,9 @@ static const char vol[]         = "pamixer --get-volume";
 
 static const struct arg args[] = {
         /* function format          argument */
-        { ram_used,             "  %s | ",         NULL },
-        { battery_perc,         "  %s%% | ",       "BAT1" },
-        { run_command,          "  %s | ",        vol },
+        /*{ ram_used,             "%s ┇ ",         NULL },*/
+        { run_command,          "%s ┇ ",         "~/.local/bin/battery.sh" },
+        { run_command,          "%s ┇ ",        "~/.local/bin/volume.sh" },
         { datetime,             "  %s",         "%a %F %T" }, /* Date time with this format: Day name YYYY-MM-DD 18:00:00 */
 };
 

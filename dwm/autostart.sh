@@ -1,4 +1,4 @@
-feh --bg-scale ~/Pictures/Wallpapers/wallpaper.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/wallpaper.png &
 flameshot &
 slstatus &
 exec dwm

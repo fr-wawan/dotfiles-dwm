@@ -5,7 +5,7 @@
 #define CMD(...)   { .v = (const char*[]){ __VA_ARGS__, NULL } }
 
 /* appearance */
-static const unsigned int borderpx       = 1;   /* border pixel of windows */
+static const unsigned int borderpx       = 5;   /* border pixel of windows */
 static const unsigned int snap           = 32;  /* snap pixel */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
@@ -18,48 +18,48 @@ static const int showsystray             = 1;   /* 0 means no systray */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "JetbrainsMono Nerd Font:size=13" };
-static const char dmenufont[]            = "JetbrainsMono Nerd Font:size=16";
+static const char *fonts[]               = { "JetbrainsMono Nerd Font:size=15:style=Medium" };
+static const char dmenufont[]            = "JetbrainsMono Nerd Font:size=18:style=Medium";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
-static char normfgcolor[]                = "#bbbbbb";
-static char normbgcolor[]                = "#222222";
+static char normfgcolor[]                = "#a6adc8";
+static char normbgcolor[]                = "#1e1e2e";
 static char normbordercolor[]            = "#444444";
 static char normfloatcolor[]             = "#db8fd9";
 
-static char selfgcolor[]                 = "#eeeeee";
-static char selbgcolor[]                 = "#005577";
-static char selbordercolor[]             = "#005577";
-static char selfloatcolor[]              = "#005577";
+static char selfgcolor[]                 = "#1e1e2e";
+static char selbgcolor[]                 = "#89b4fa";
+static char selbordercolor[]             = "#89b4fa";
+static char selfloatcolor[]              = "#89b4fa";
 
-static char titlenormfgcolor[]           = "#bbbbbb";
-static char titlenormbgcolor[]           = "#222222";
+static char titlenormfgcolor[]           = "#a6adc8";
+static char titlenormbgcolor[]           = "#1e1e2e";
 static char titlenormbordercolor[]       = "#444444";
 static char titlenormfloatcolor[]        = "#db8fd9";
 
-static char titleselfgcolor[]            = "#eeeeee";
-static char titleselbgcolor[]            = "#005577";
-static char titleselbordercolor[]        = "#005577";
-static char titleselfloatcolor[]         = "#005577";
+static char titleselfgcolor[]            = "#1e1e2e";
+static char titleselbgcolor[]            = "#89b4fa";
+static char titleselbordercolor[]        = "#89b4fa";
+static char titleselfloatcolor[]         = "#89b4fa";
 
-static char tagsnormfgcolor[]            = "#bbbbbb";
-static char tagsnormbgcolor[]            = "#222222";
+static char tagsnormfgcolor[]            = "#a6adc8";
+static char tagsnormbgcolor[]            = "#1e1e2e";
 static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
-static char tagsselfgcolor[]             = "#eeeeee";
-static char tagsselbgcolor[]             = "#005577";
-static char tagsselbordercolor[]         = "#005577";
-static char tagsselfloatcolor[]          = "#005577";
+static char tagsselfgcolor[]             = "#1e1e2e";
+static char tagsselbgcolor[]             = "#89b4fa";
+static char tagsselbordercolor[]         = "#89b4fa";
+static char tagsselfloatcolor[]          = "#89b4fa";
 
-static char hidnormfgcolor[]             = "#005577";
+static char hidnormfgcolor[]             = "#89b4fa";
 static char hidselfgcolor[]              = "#227799";
-static char hidnormbgcolor[]             = "#222222";
-static char hidselbgcolor[]              = "#222222";
+static char hidnormbgcolor[]             = "#1e1e2e";
+static char hidselbgcolor[]              = "#1e1e2e";
 
-static char urgfgcolor[]                 = "#bbbbbb";
-static char urgbgcolor[]                 = "#222222";
+static char urgfgcolor[]                 = "#a6adc8";
+static char urgbgcolor[]                 = "#1e1e2e";
 static char urgbordercolor[]             = "#ff0000";
 static char urgfloatcolor[]              = "#db8fd9";
 
@@ -141,8 +141,9 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	{ "firefox",   		NULL,     NULL,		NULL,		1 << 2,		0,	-1 },
 	{ "Brave-browser",   		NULL,     NULL,		NULL,		1 << 2,		0,	-1 },
+	{ "steam",   		NULL,     NULL,		NULL,		1 << 4,		0,	-1 },
 	{ "Code",   		NULL,     NULL,		NULL,		1 << 1,		0,	-1 },
-	{ "spotify",   		NULL,     NULL,		NULL,		1 << 3,		0,	-1 },
+	{ "spotify",   		NULL,     NULL,		NULL,		1 << 4,		0,	-1 },
 	{ "discord",   		NULL,     NULL,		NULL,		1 << 3,		0,	-1 },
 	{ "DBeaver",   		NULL,     NULL,		NULL,		1 << 5,		0,	-1 },
 	{ "GitHub Desktop",   		NULL,     NULL,		NULL,		1 << 4,		0,	-1 },};
@@ -202,7 +203,7 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "wezterm", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
@@ -224,18 +225,19 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      spawn,      SHCMD("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 165;xrandr --output eDP --off") },
-        { MODKEY,                       XK_n,      spawn,      SHCMD("xrandr --output eDP --mode 1920x1080") },
+	{ MODKEY,                       XK_n,      spawn,      SHCMD("xrandr --output eDP --mode 1920x1080") },
 	{ 0,                            XF86XK_AudioMute,           spawn,          SHCMD("pactl set-sink-mute 0 toggle") },
 	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          SHCMD("pactl set-sink-volume 0 -3%") },
 	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          SHCMD("pactl set-sink-volume 0 +3%") },
-	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          SHCMD("brightnessctl g +5%") },
-	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          SHCMD("brightnessctl g 5%-") },
+	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          SHCMD("light -A 10") },
+	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          SHCMD("light -U 10") },
 	{ MODKEY|ShiftMask,                            XK_s,                   spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                            XK_e,                   spawn,          SHCMD("nemo") },
 	{ 0,                            XK_ISO_Next_Group,          spawn,          SHCMD("pkill -RTMIN+10 dwmblocks") },
 	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,      setlayout,              {0} },
 	{ MODKEY|ShiftMask,             XK_space,      togglefloating,         {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,          view,                   {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,          tag,                    {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,      focusmon,               {.i = -1 } },
