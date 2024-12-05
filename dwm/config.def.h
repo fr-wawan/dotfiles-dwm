@@ -11,7 +11,7 @@ static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = 'A';
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayspacing = 1;   /* systray spacing */
 static const int showsystray             = 1;   /* 0 means no systray */
 
 /* Indicators: see patch/bar_indicators.h for options */
@@ -23,43 +23,43 @@ static const char dmenufont[]            = "JetbrainsMono Nerd Font:size=18:styl
 
 static char c000000[]                    = "#000000"; // placeholder value
 
-static char normfgcolor[]                = "#a6adc8";
-static char normbgcolor[]                = "#1e1e2e";
+static char normfgcolor[]                = "#bbbbbb";
+static char normbgcolor[]                = "#222222";
 static char normbordercolor[]            = "#444444";
 static char normfloatcolor[]             = "#db8fd9";
 
-static char selfgcolor[]                 = "#1e1e2e";
-static char selbgcolor[]                 = "#89b4fa";
-static char selbordercolor[]             = "#89b4fa";
-static char selfloatcolor[]              = "#89b4fa";
+static char selfgcolor[]                 = "#eeeeee";
+static char selbgcolor[]                 = "#005577";
+static char selbordercolor[]             = "#005577";
+static char selfloatcolor[]              = "#005577";
 
-static char titlenormfgcolor[]           = "#a6adc8";
-static char titlenormbgcolor[]           = "#1e1e2e";
+static char titlenormfgcolor[]           = "#bbbbbb";
+static char titlenormbgcolor[]           = "#222222";
 static char titlenormbordercolor[]       = "#444444";
 static char titlenormfloatcolor[]        = "#db8fd9";
 
-static char titleselfgcolor[]            = "#1e1e2e";
-static char titleselbgcolor[]            = "#89b4fa";
-static char titleselbordercolor[]        = "#89b4fa";
-static char titleselfloatcolor[]         = "#89b4fa";
+static char titleselfgcolor[]            = "#eeeeee";
+static char titleselbgcolor[]            = "#005577";
+static char titleselbordercolor[]        = "#005577";
+static char titleselfloatcolor[]         = "#005577";
 
-static char tagsnormfgcolor[]            = "#a6adc8";
-static char tagsnormbgcolor[]            = "#1e1e2e";
+static char tagsnormfgcolor[]            = "#bbbbbb";
+static char tagsnormbgcolor[]            = "#222222";
 static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
-static char tagsselfgcolor[]             = "#1e1e2e";
-static char tagsselbgcolor[]             = "#89b4fa";
-static char tagsselbordercolor[]         = "#89b4fa";
-static char tagsselfloatcolor[]          = "#89b4fa";
+static char tagsselfgcolor[]             = "#eeeeee";
+static char tagsselbgcolor[]             = "#005577";
+static char tagsselbordercolor[]         = "#005577";
+static char tagsselfloatcolor[]          = "#005577";
 
-static char hidnormfgcolor[]             = "#89b4fa";
+static char hidnormfgcolor[]             = "#005577";
 static char hidselfgcolor[]              = "#227799";
-static char hidnormbgcolor[]             = "#1e1e2e";
-static char hidselbgcolor[]              = "#1e1e2e";
+static char hidnormbgcolor[]             = "#222222";
+static char hidselbgcolor[]              = "#222222";
 
-static char urgfgcolor[]                 = "#a6adc8";
-static char urgbgcolor[]                 = "#1e1e2e";
+static char urgfgcolor[]                 = "#bbbbbb";
+static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";
 static char urgfloatcolor[]              = "#db8fd9";
 
@@ -203,7 +203,7 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
-static const char *termcmd[]  = { "wezterm", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */

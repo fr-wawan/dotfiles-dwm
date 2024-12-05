@@ -1,4 +1,4 @@
-feh --bg-scale ~/Pictures/Wallpapers/wallpaper.png &
+feh --bg-scale ~/Pictures/Wallpapers/wallpaper2.png &
 flameshot &
 slstatus &
-exec dwm
+exec dbus-launch dwm
