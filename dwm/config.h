@@ -145,6 +145,7 @@ static const Rule rules[] = {
 	{ "Code",   		NULL,     NULL,		NULL,		1 << 1,		0,	-1 },
 	{ "spotify",   		NULL,     NULL,		NULL,		1 << 4,		0,	-1 },
 	{ "discord",   		NULL,     NULL,		NULL,		1 << 3,		0,	-1 },
+	{ "vesktop",   		NULL,     NULL,		NULL,		1 << 3,		0,	-1 },
 	{ "DBeaver",   		NULL,     NULL,		NULL,		1 << 5,		0,	-1 },
 	{ "GitHub Desktop",   		NULL,     NULL,		NULL,		1 << 4,		0,	-1 },};
 
@@ -203,7 +204,7 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
@@ -232,7 +233,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          SHCMD("light -A 10") },
 	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          SHCMD("light -U 10") },
 	{ MODKEY|ShiftMask,                            XK_s,                   spawn,          SHCMD("flameshot gui") },
-	{ MODKEY,                            XK_e,                   spawn,          SHCMD("nemo") },
+	{ MODKEY,                            XK_e,                   spawn,          SHCMD("thunar") },
 	{ 0,                            XK_ISO_Next_Group,          spawn,          SHCMD("pkill -RTMIN+10 dwmblocks") },
 	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,      setlayout,              {0} },
